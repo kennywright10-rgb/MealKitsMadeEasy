@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#c9dacd">
 <title>Meal Kits Made Easy | The Dinner A'Fare Cookbook by Stephanie Wright</title>
 <meta name="description" content="Meal Kits Made Easy is the freezer meal cookbook from Dinner A'Fare. More than 120 family favorites from 20 years and over 1 million dinners. Available in hardcover and paperback.">
 <link rel="canonical" href="https://www.mealkitsmadeeasy.com/">
@@ -72,9 +73,10 @@
   --serif:"Lora",Georgia,serif; --sans:"Montserrat",system-ui,sans-serif;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+a,summary{-webkit-tap-highlight-color:rgba(38,74,56,.12)}
 body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased}
-img{max-width:100%;display:block}
+img{max-width:100%;height:auto;display:block}
 a{color:var(--forest)}
 .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
 h1,h2,h3{font-family:var(--serif);font-weight:500;color:var(--forest);line-height:1.15;margin:0}
@@ -184,10 +186,76 @@ footer .brand{color:#fff}
   .gallery{grid-template-columns:1fr 1fr}
   .nav nav a:not(.btn){display:none}
 }
-@media (max-width:560px){
-  .steps,.chapters,.formats{grid-template-columns:1fr}
-  .cta .btn{width:100%;text-align:center}
+.swipe,.buybar{display:none}
+@media (max-width:640px){
+  body{font-size:16px}
+  .wrap{padding:0 20px}
+  section{padding:52px 0;scroll-margin-top:56px}
+  h2{font-size:28px}
+  .lead{font-size:17px}
+  .eyebrow{margin-bottom:10px}
+
+  .nav .wrap{height:56px}
+  .brand{font-size:18px;white-space:nowrap}
+  .btn.small{white-space:nowrap;padding:9px 14px;font-size:11px}
+
+  .hero{padding:28px 0 40px}
+  .hero .wrap{gap:22px}
+  .cover img{width:176px;transform:rotate(1.5deg);box-shadow:0 18px 34px -14px rgba(20,50,35,.55)}
+  .hero h1{font-size:42px}
+  .hero .sub{font-size:12px;margin:10px 0 14px}
+  .hero .lead{margin-bottom:20px}
+  .cta{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .cta .btn{padding:15px 6px;font-size:12px;letter-spacing:.05em;text-align:center}
+  .fine{margin-top:12px}
+
+  .stats{padding:26px 0}
+  .stats .wrap{gap:18px 12px}
+  .stats b{font-size:28px}
+  .stats span{font-size:10.5px;letter-spacing:.1em}
+  .press{padding:16px 0;font-size:11px;line-height:2}
+  .press b{margin:0 6px}
+
+  .method .head{gap:24px;margin-bottom:28px}
+  .method .head img{aspect-ratio:16/10}
+  .steps{grid-template-columns:1fr;gap:12px}
+  .step{display:grid;grid-template-columns:40px 1fr;column-gap:10px;padding:18px 18px 18px 14px}
+  .step::before{grid-row:1/3;font-size:38px;margin:0;text-align:center}
+  .step h3{font-size:19px;margin-bottom:4px}
+
+  .inside .intro{margin-bottom:22px}
+  .swipe{display:block;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--forest-2);margin:0 0 12px}
+  .chapters{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;margin:0 -20px;padding:0 20px 10px;scroll-padding-left:20px;scrollbar-width:none}
+  .chapters::-webkit-scrollbar{display:none}
+  .chap{flex:0 0 78%;scroll-snap-align:start;padding:22px}
+  .chap h3{font-size:23px}
+  .gallery{gap:10px;margin-top:26px}
+
+  .story .wrap{gap:26px}
+  .story img{aspect-ratio:16/10}
+  .timeline{margin-top:18px}
+  .timeline li{grid-template-columns:58px 1fr;gap:10px;font-size:15px}
+  .timeline b{font-size:21px}
+  blockquote{font-size:19px;margin-top:26px}
+
+  .buy p.lead{margin-bottom:26px}
+  .formats{grid-template-columns:1fr;gap:14px}
+  .format{padding:26px 22px}
+
+  summary{font-size:19px;padding:4px 0}
+  details{padding:16px 0}
+  footer{padding:32px 0 calc(96px + env(safe-area-inset-bottom))}
+
+  .buybar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(251,250,246,.97);backdrop-filter:blur(8px);border-top:1px solid var(--line);padding:10px 14px calc(10px + env(safe-area-inset-bottom));transform:translateY(110%);transition:transform .25s ease;box-shadow:0 -8px 24px -12px rgba(20,50,35,.35)}
+  .buybar.show{transform:none}
+  .buybar .btn{padding:13px 6px;font-size:12px;letter-spacing:.05em;text-align:center}
 }
+@media (max-width:360px){
+  .hero h1{font-size:36px}
+  .cta .btn,.buybar .btn{font-size:11px;letter-spacing:.02em}
+  .brand{font-size:16px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.buybar,.btn{transition:none}}
 </style>
 </head>
 <body>
@@ -211,7 +279,7 @@ footer .brand{color:#fff}
   <div class="wrap">
     <div>
       <p class="eyebrow">The Dinner A'Fare Cookbook</p>
-      <h1>Meal Kits<br>Made Easy</h1>
+      <h1>Meal Kits <br>Made Easy</h1>
       <p class="sub">A guide to easy, freezable family meals</p>
       <p class="lead">For 20 years we prepped dinner for more than 100,000 customers. Now the recipes they asked for again and again are yours, along with the simple method for stocking your own freezer with them.</p>
       <div class="cta">
@@ -221,7 +289,7 @@ footer .brand{color:#fff}
       <p class="fine">By Stephanie Wright, co-founder of Dinner A'Fare. Up to 25% off list price when you order here.</p>
     </div>
     <div class="cover">
-      <img src="images/cover.jpg" width="456" height="573" alt="Meal Kits Made Easy cookbook cover by Stephanie Wright">
+      <img src="images/cover.jpg" width="456" height="573" fetchpriority="high" alt="Meal Kits Made Easy cookbook cover by Stephanie Wright">
     </div>
   </div>
 </section>
@@ -263,6 +331,7 @@ footer .brand{color:#fff}
       <h2>Six chapters of customer favorites</h2>
       <p class="lead">These are the dinners people ordered over and over. Each one lists how many it serves, how long it takes, and exactly what goes in each bag. Every chapter opens with freezing tips for that protein.</p>
     </div>
+    <p class="swipe">Swipe to see all six &rarr;</p>
     <div class="chapters">
       <div class="chap"><h3>Poultry</h3><ul><li>Chicken Francese</li><li>Blackened Chicken Tacos with Chipotle Ranch</li><li>Poppyseed Chicken</li><li>Firecracker Chicken</li></ul></div>
       <div class="chap"><h3>Beef</h3><ul><li>Beef Bourguignon</li><li>Korean Beef Lettuce Wraps</li><li>Texas Fajitas</li><li>Salisbury Steak</li></ul></div>
@@ -344,6 +413,21 @@ footer .brand{color:#fff}
     <div><a href="#buy">Buy the book</a></div>
   </div>
 </footer>
+
+<div class="buybar" id="buybar" aria-label="Buy the book">
+  <a class="btn" data-format="hardcover" href="https://shop.ingramspark.com/b/084?params=We9IESZY9ZPty1YqaNHGt7PfGW0JhcZ3ptb5h4U1oxO" target="_blank" rel="noopener">Hardcover $49.99</a>
+  <a class="btn ghost" data-format="paperback" href="https://shop.ingramspark.com/b/084?params=BZNh4ZJmiUFkESwjvU3PPKhzeSnN8JUhsXCCCndB7wK" target="_blank" rel="noopener">Paperback $39.99</a>
+</div>
+<script>
+(function(){
+  var bar=document.getElementById('buybar'),cta=document.querySelector('.hero .cta'),buy=document.getElementById('buy');
+  if(!bar||!cta||!buy||!('IntersectionObserver' in window))return;
+  var seen={cta:true,buy:false};
+  function upd(){bar.classList.toggle('show',!seen.cta&&!seen.buy)}
+  new IntersectionObserver(function(e){seen.cta=e[0].isIntersecting||e[0].boundingClientRect.top>0;upd()}).observe(cta);
+  new IntersectionObserver(function(e){seen.buy=e[0].isIntersecting;upd()}).observe(buy);
+})();
+</script>
 
 </body>
 </html>
