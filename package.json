@@ -1,0 +1,23 @@
+{
+  "name": "mealkitsmadeeasy",
+  "version": "1.0.0",
+  "description": "Static site for the cookbook by Stephanie Wright. No build step.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kennywright10-rgb/MealKitsMadeEasy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kennywright10-rgb/MealKitsMadeEasy/issues"
+  },
+  "homepage": "https://github.com/kennywright10-rgb/MealKitsMadeEasy#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
